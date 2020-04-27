@@ -19,20 +19,34 @@ namespace Latihan27Apr
 
         private void button1_Click(object sender, EventArgs e)
         {
-            double highest_number;
+            double standar = 85;
             double first_num = Double.Parse(textBox1.Text);
             double second_num = Double.Parse(textBox2.Text);
+            double third_num = Double.Parse(textBox3.Text);
+            double average_num = (first_num + second_num + third_num) / 3;
 
-            if (first_num > second_num)
+            textBox4.Text = average_num.ToString();
+            if (average_num > standar)
             {
-                highest_number = first_num;
+                label5.Text = "Hore, kamu lulus";
             }
             else
             {
-                highest_number = second_num;
+                label5.Text = "Maaf coba tahun depan";
             }
+        }
 
-            textBox3.Text = "Angka terbesar adalah: " + highest_number;
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
