@@ -17,36 +17,34 @@ namespace Latihan27Apr
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            double standar = 85;
             double first_num = Double.Parse(textBox1.Text);
             double second_num = Double.Parse(textBox2.Text);
-            double third_num = Double.Parse(textBox3.Text);
-            double average_num = (first_num + second_num + third_num) / 3;
+            double result_num = 0;
 
-            textBox4.Text = average_num.ToString();
-            if (average_num > standar)
+            if (comboBox1.SelectedIndex == 0)
             {
-                label5.Text = "Hore, kamu lulus";
+                result_num = first_num + second_num;
+            }
+            else if (comboBox1.SelectedIndex == 1)
+            {
+                result_num = first_num - second_num;
+            }
+            else if (comboBox1.SelectedIndex == 2)
+            {
+                result_num = first_num / second_num;
+            }
+            else if (comboBox1.SelectedIndex == 3)
+            {
+                result_num = first_num * second_num;
             }
             else
             {
-                label5.Text = "Maaf coba tahun depan";
+                MessageBox.Show("Operator salah");
             }
-        }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            textBox1.Text = "";
-            textBox2.Text = "";
-            textBox3.Text = "";
-            textBox4.Text = "";
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            textBox3.Text = result_num.ToString();
         }
     }
 }
